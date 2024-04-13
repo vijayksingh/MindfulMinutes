@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Social Media Cost Tracker",
+  "version": "1.0",
+  "description": "Track the cost of time spent on social media websites.",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
