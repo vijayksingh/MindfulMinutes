@@ -1,0 +1,33 @@
+/* Tracker.css */
+.tracker {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  cursor: move;
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+.tracker-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.tracker-site {
+  font-weight: bold;
+}
+
+.tracker-category {
+  color: #888;
+}
+
+.tracker-time {
+  font-size: 18px;
+}

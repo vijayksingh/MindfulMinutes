@@ -9,6 +9,7 @@ module.exports = {
     contentScript: "./src/content/index.ts",
     background: "./src/background/index.ts",
     react: "./src/react/index.tsx",
+    injectTracker: "./src/content/injectTracker.js", // Add this line
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -18,6 +19,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+      excludeChunks: ["injectTracker"], // Exclude injectTracker from being injected into index.html
     }),
     new CopyPlugin({
       patterns: [
@@ -44,9 +46,13 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
   resolve: {
-    extensions: [".ts", ".tsx"],
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
 };

@@ -5,7 +5,8 @@
   "description": "Track the cost of time spent on social media websites.",
   "permissions": ["activeTab", "storage"],
   "action": {
-    "default_popup": "index.html"
+    "default_popup": "index.html",
+    "default_title": "Social Media Cost Tracker"
   },
   "background": {
     "service_worker": "background.js"
